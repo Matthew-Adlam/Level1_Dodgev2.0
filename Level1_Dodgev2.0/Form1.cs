@@ -34,6 +34,8 @@ namespace Level1_Dodgev2._0
         bool secretStuffz;
         bool secretStuffz2 = true;
         bool menuVis = false;
+        int mysteryO = 0;
+        Random mysteryOutcome = new Random();
 
         private void TmrPlanet_Tick(object sender, EventArgs e)
         {
@@ -115,7 +117,6 @@ namespace Level1_Dodgev2._0
         int x2 = 50, y2 = 290; //starting position of spaceship
         //Load our two images from the bin\debug folder
         Image spaceship = Image.FromFile(Application.StartupPath + @"\alien1.png");
-        Image mystery = Image.FromFile(Application.StartupPath + @"\download.jpg");
 
         private void FrmDodge_KeyDown(object sender, KeyEventArgs e)
         {
@@ -334,6 +335,11 @@ namespace Level1_Dodgev2._0
             {
                 MessageBox.Show("Sorry, invalid code.");
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+           
         }
 
         Image planet1 = Image.FromFile(Application.StartupPath + @"\planet1.png");

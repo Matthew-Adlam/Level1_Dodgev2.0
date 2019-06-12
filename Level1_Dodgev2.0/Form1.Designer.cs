@@ -49,12 +49,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.redeemCode = new System.Windows.Forms.TextBox();
             this.redeemButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PnlGame.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlGame
             // 
             this.PnlGame.BackColor = System.Drawing.Color.Silver;
+            this.PnlGame.Controls.Add(this.pictureBox1);
             this.PnlGame.Location = new System.Drawing.Point(13, 166);
             this.PnlGame.Margin = new System.Windows.Forms.Padding(4);
             this.PnlGame.Name = "PnlGame";
@@ -223,7 +227,7 @@
             this.redeemCode.Name = "redeemCode";
             this.redeemCode.Size = new System.Drawing.Size(100, 22);
             this.redeemCode.TabIndex = 15;
-            //
+            // 
             // redeemButton
             // 
             this.redeemButton.Location = new System.Drawing.Point(534, 292);
@@ -233,6 +237,19 @@
             this.redeemButton.Text = "Confirm";
             this.redeemButton.UseVisualStyleBackColor = true;
             this.redeemButton.Click += new System.EventHandler(this.redeemButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
+            this.pictureBox1.BackgroundImage = global::Level1_Dodgev2._0.Properties.Resources.download;
+            this.pictureBox1.Image = global::Level1_Dodgev2._0.Properties.Resources.download;
+            this.pictureBox1.Location = new System.Drawing.Point(210, 93);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FrmDodge
             // 
@@ -262,8 +279,10 @@
             this.DoubleClick += new System.EventHandler(this.FrmDodge_DoubleClick);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmDodge_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmDodge_KeyUp);
+            this.PnlGame.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,6 +310,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox redeemCode;
         private System.Windows.Forms.Button redeemButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
