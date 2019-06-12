@@ -368,5 +368,5 @@ namespace Level1_Dodgev2._0
 }
 // Stuff to fix:
 // When restarts, planet speed back to normal
-// Powerups?!?
+// Powerups
 // Codes
