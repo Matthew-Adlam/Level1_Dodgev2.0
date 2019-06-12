@@ -24,6 +24,7 @@ namespace Level1_Dodgev2._0
         int[] planetSpeed = new int[7];
         bool left, right;
         int score = 0;
+        int hi = 0;
         int lives = 5;
         int highScore = 0;
         int IDK = 0;
