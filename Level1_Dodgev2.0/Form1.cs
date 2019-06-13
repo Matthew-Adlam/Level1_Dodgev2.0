@@ -37,6 +37,8 @@ namespace Level1_Dodgev2._0
         bool menuVis = false;
         int mysteryO = 0;
         Random mysteryOutcome = new Random();
+        int timerM = 0;
+        Random mysteryTmr = new Random();
 
         private void TmrPlanet_Tick(object sender, EventArgs e)
         {
@@ -207,12 +209,12 @@ namespace Level1_Dodgev2._0
 
         private void FrmDodge_DoubleClick(object sender, EventArgs e)
         {
-            hacksToolStripMenuItem.Visible = true;
-            lmfaoToolStripMenuItem.Visible = true;
-            youLoseToolStripMenuItem.Visible = true;
-            idkToolStripMenuItem.Visible = true;
-            iHakUToolStripMenuItem.Visible = true;
-            menuStrip1.Visible = true;
+           // hacksToolStripMenuItem.Visible = true;
+            //lmfaoToolStripMenuItem.Visible = true;
+           // youLoseToolStripMenuItem.Visible = true;
+           // idkToolStripMenuItem.Visible = true;
+           // iHakUToolStripMenuItem.Visible = true;
+           // menuStrip1.Visible = true;
         }
 
         private void lmfaoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -313,7 +315,7 @@ namespace Level1_Dodgev2._0
                 menuStrip1.Visible = true;
                 menuVis = true;
             }
-            else if (redeemButton.Text == "RG")
+            else if (redeemButton.Text == "RoyalGiant")
             {
                 MessageBox.Show("I Hate You.");
                 livesSetBack = 5;
@@ -340,7 +342,13 @@ namespace Level1_Dodgev2._0
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-           
+            mysteryO = mysteryOutcome.Next(1, 6);
+        }
+
+        private void TmrMystery_Tick(object sender, EventArgs e)
+        {
+            timerM = mysteryTmr.Next(1, 20);
+            
         }
 
         Image planet1 = Image.FromFile(Application.StartupPath + @"\planet1.png");
@@ -350,6 +358,7 @@ namespace Level1_Dodgev2._0
         {
             InitializeComponent();
             start.Enabled = true;
+            pictureBox1.Visible = false;
             instructions.Enabled = true;
             redeemButton.Enabled = true;
             areaSpaceship = new Rectangle(x2, y2, 30, 30);

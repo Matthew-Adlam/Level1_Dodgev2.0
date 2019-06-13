@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PnlGame = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TmrPlanet = new System.Windows.Forms.Timer(this.components);
             this.TmrShip = new System.Windows.Forms.Timer(this.components);
             this.LblScore = new System.Windows.Forms.Label();
@@ -49,10 +50,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.redeemCode = new System.Windows.Forms.TextBox();
             this.redeemButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TmrMystery = new System.Windows.Forms.Timer(this.components);
             this.PnlGame.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlGame
@@ -65,6 +66,19 @@
             this.PnlGame.Size = new System.Drawing.Size(500, 450);
             this.PnlGame.TabIndex = 0;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
+            this.pictureBox1.BackgroundImage = global::Level1_Dodgev2._0.Properties.Resources.download;
+            this.pictureBox1.Image = global::Level1_Dodgev2._0.Properties.Resources.download;
+            this.pictureBox1.Location = new System.Drawing.Point(210, 93);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // TmrPlanet
             // 
@@ -238,18 +252,11 @@
             this.redeemButton.UseVisualStyleBackColor = true;
             this.redeemButton.Click += new System.EventHandler(this.redeemButton_Click);
             // 
-            // pictureBox1
+            // TmrMystery
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox1.BackgroundImage = global::Level1_Dodgev2._0.Properties.Resources.download;
-            this.pictureBox1.Image = global::Level1_Dodgev2._0.Properties.Resources.download;
-            this.pictureBox1.Location = new System.Drawing.Point(210, 93);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(69, 56);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.TmrMystery.Enabled = true;
+            this.TmrMystery.Interval = 1000;
+            this.TmrMystery.Tick += new System.EventHandler(this.TmrMystery_Tick);
             // 
             // FrmDodge
             // 
@@ -280,9 +287,9 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmDodge_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmDodge_KeyUp);
             this.PnlGame.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,6 +318,7 @@
         private System.Windows.Forms.TextBox redeemCode;
         private System.Windows.Forms.Button redeemButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer TmrMystery;
     }
 }
 
