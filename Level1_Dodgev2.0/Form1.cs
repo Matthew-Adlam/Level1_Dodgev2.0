@@ -131,6 +131,14 @@ namespace Level1_Dodgev2._0
             {
                 right = true;
             }
+            if (e.KeyData == Keys.Up)
+            {
+                left = true;
+            }
+            if (e.KeyData == Keys.Down)
+            {
+                right = true;
+            }
 
         }
 
@@ -143,6 +151,14 @@ namespace Level1_Dodgev2._0
             if (e.KeyData == Keys.Right)
             {
                 right = false;
+            }
+            if (e.KeyData == Keys.Up)
+            {
+                left = true;
+            }
+            if (e.KeyData == Keys.Down)
+            {
+                right = true;
             }
 
         }
@@ -160,7 +176,6 @@ namespace Level1_Dodgev2._0
                     areaSpaceship.X -= 7; //else move 5 to the left
                 }
             }
-
             if (right) // if right arrow key pressed
             {
                 if (areaSpaceship.X > PnlGame.Width - 40)// is spaceship within 40 of right side
@@ -341,6 +356,11 @@ namespace Level1_Dodgev2._0
                 MessageBox.Show("Say No To Bomb Tower");
                 livesSetBack = 4;
             }
+            else if(redeemCode.Text == "Zap")
+            {
+                MessageBox.Show("You have good taste! Have an extra life!");
+                livesBoost = 1;
+            }
             else
             {
                 MessageBox.Show("Sorry, invalid code.");
@@ -383,3 +403,5 @@ namespace Level1_Dodgev2._0
 }
 // Stuff to fix:
 // When restarts, planet speed back to normal
+//
+//
