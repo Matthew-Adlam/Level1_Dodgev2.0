@@ -239,6 +239,7 @@ namespace Level1_Dodgev2._0
 
             score = 0 - scoreSetBack + scoreBoost;
             lives = 5 - livesSetBack + livesBoost;
+            CheckLives();
             secretStuffz = true;
 
             LblLives.Text = lives.ToString();
@@ -315,24 +316,30 @@ namespace Level1_Dodgev2._0
                 menuStrip1.Visible = true;
                 menuVis = true;
             }
-            else if (redeemButton.Text == "RoyalGiant")
+            else if (redeemCode.Text == "Royal Giant")
             {
                 MessageBox.Show("I Hate You.");
                 livesSetBack = 5;
             }
-            else if (redeemButton.Text == "Hog Rider")
+            else if (redeemCode.Text == "Hog Rider")
             {
                 MessageBox.Show("You have good taste! Have an extra 10 points!");
                 scoreBoost = 10;
             }
-            else if (redeemButton.Text == "1234567890")
+            else if (redeemCode.Text == "1234567890")
             {
                 MessageBox.Show("Have an extra 5 points!");
                 scoreBoost = 5;
             }
-            else if (redeemButton.Text == "")
+            else if (redeemCode.Text == "")
             {
                 MessageBox.Show("");
+            }
+
+            else if (redeemCode.Text == "Josh")
+            {
+                MessageBox.Show("Say No To Bomb Tower");
+                livesSetBack = 4;
             }
             else
             {
@@ -350,7 +357,6 @@ namespace Level1_Dodgev2._0
             timerM = mysteryTmr.Next(1, 20);
             
         }
-
         Image planet1 = Image.FromFile(Application.StartupPath + @"\planet1.png");
 
 
@@ -377,5 +383,3 @@ namespace Level1_Dodgev2._0
 }
 // Stuff to fix:
 // When restarts, planet speed back to normal
-// Powerups
-// Codes
