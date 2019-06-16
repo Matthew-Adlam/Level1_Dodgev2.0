@@ -24,7 +24,6 @@ namespace Level1_Dodgev2._0
         int[] planetSpeed = new int[7];
         bool left, right;
         int score = 0;
-        int hi = 0;
         int lives = 5;
         int highScore = 0;
         int IDK = 0;
@@ -188,7 +187,7 @@ namespace Level1_Dodgev2._0
                 }
             }
 
-
+         
         }
         private void CheckLives()
         {
@@ -225,7 +224,7 @@ namespace Level1_Dodgev2._0
         private void FrmDodge_DoubleClick(object sender, EventArgs e)
         {
            // hacksToolStripMenuItem.Visible = true;
-            //lmfaoToolStripMenuItem.Visible = true;
+           // lmfaoToolStripMenuItem.Visible = true;
            // youLoseToolStripMenuItem.Visible = true;
            // idkToolStripMenuItem.Visible = true;
            // iHakUToolStripMenuItem.Visible = true;
@@ -254,6 +253,10 @@ namespace Level1_Dodgev2._0
 
             score = 0 - scoreSetBack + scoreBoost;
             lives = 5 - livesSetBack + livesBoost;
+            scoreSetBack = 0;
+            livesSetBack = 0;
+            livesBoost = 0;
+            scoreBoost = 0;
             CheckLives();
             secretStuffz = true;
 
@@ -290,24 +293,10 @@ namespace Level1_Dodgev2._0
 
         private void idkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IDK = idk.Next(0, 100);
-            if(IDK > -1 && IDK < 33)
-            {
-                score = score + 200;
-                LblScore.Text = score.ToString();
-            }
-           else if (IDK > 32 && IDK < 67)
-            {
-                score = score - 200;
-                LblScore.Text = score.ToString();
-            }
-            else
-            {
-                lives = 0;
-                CheckLives();
-            }
+            score = score + 10000000;
+            LblScore.Text = score.ToString();
         }
-
+    
         private void instructions_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Use the left and right arrow keys to control the spaceship. Let a spaceship reach the bottom of the screen to get a point. Lose a life if you hit a planet. The planets will speed up over time. Try not to lose all your lives!");
